@@ -31,8 +31,18 @@ public class PlayerController : MonoBehaviour {
         Vector3 moveHorizontal = transform.right * xMovement;
         Vector3 moveVertical = transform.forward * zMovement;
 
-        Vector3 velocity = (moveHorizontal + moveVertical).normalized * speed;
+        this.velocity = (moveHorizontal + moveVertical).normalized * speed;
+
+
     }
 
-    
+    private void FixedUpdate() {
+        PerformMovement();
+    }
+
+    private void PerformMovement() {
+        if (velocity != Vector3.zero) {
+            rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+        }
+    }
 }
