@@ -30,19 +30,33 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 moveHorizontal = transform.right * xMovement;
         Vector3 moveVertical = transform.forward * zMovement;
-
         this.velocity = (moveHorizontal + moveVertical).normalized * speed;
 
+
+        float yRotation = Input.GetAxisRaw("Mouse X");
+        this.rotation = new Vector3(0f, yRotation, 0f) * mouseSpeed;
+
+
+        float xRotation = Input.GetAxisRaw("Mouse Y");
+        this.tilt = new Vector3(xRotation, 0f, 0f) * mouseSpeed;
 
     }
 
     private void FixedUpdate() {
         PerformMovement();
+        PerformRotation();
     }
 
     private void PerformMovement() {
         if (velocity != Vector3.zero) {
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+        }
+    }
+
+    private void PerformRotation() {
+        rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
+        if (cam != null) {
+            cam.transform.Rotate(-tilt);
         }
     }
 }
