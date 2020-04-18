@@ -307,33 +307,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!20 &963194227 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 1065621969401098300, guid: 33072832dd17f414d8cca5221dace105,
-    type: 3}
-  m_PrefabInstance: {fileID: 1065621970330590543}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2054550431 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1065621970426392272, guid: 33072832dd17f414d8cca5221dace105,
-    type: 3}
-  m_PrefabInstance: {fileID: 1065621970330590543}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2054550432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054550431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82dd0f2ba299d074d8b27ec722be316b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  mouseSpeed: 3
-  cam: {fileID: 963194227}
 --- !u!1001 &1065621970330590543
 PrefabInstance:
   m_ObjectHideFlags: 0
